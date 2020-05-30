@@ -29,7 +29,9 @@
     "test:debug": "cross-env node --inspect-brk ./../../node_modules/.bin/jest --runInBand",
     "test:update": "cross-env ./../../node_modules/.bin/jest -u",
     "test:watch": "cross-env ./../../node_modules/.bin/jest --watchAll",
-    "manage:translations": "yarn build:prod && babel-node ./translationRunner.js"
+    "manage:translations": "yarn build:prod && babel-node ./translationRunner.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "jest": {
     "automock": false,
@@ -143,6 +145,8 @@
     "rxjs": "6.3.2",
     "sanitize-html": "1.18.2",
     "styled-components": "3.3.2",
-    "zxcvbn": "4.4.2"
-  }
+    "zxcvbn": "4.4.2",
+    "snyk": "^1.332.1"
+  },
+  "snyk": true
 }
